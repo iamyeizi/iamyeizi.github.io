@@ -23,31 +23,33 @@
 
     body {
       font-family: "Space Mono", monospace;
-      font-size: calc(10px + 0.33vw);
+      font-size: calc(9px + 0.33vw);
       font-weight: 400;
       font-style: normal;
       -webkit-font-smoothing: antialiased;
       padding: 5vh 10vw;
       color: #979797;
+      margin: 0;
     }
 
     h1 {
-      font-size: 4.5em;
+      font-size: 3.9em;
       font-weight: 700;
-      margin-bottom: 0;
+      margin: 0;
     }
 
     h2 {
       font-size: 2.2em;
       font-weight: 700;
       letter-spacing: -1.5px;
+      margin: 0;
     }
 
     p {
       font-size: 1.3em;
       font-weight: 300;
       line-height: 1.4;
-      max-width: 28em;
+      max-width: 45em;
     }
 
     a {
@@ -78,25 +80,56 @@
     a:hover:after {
       top: 0%;
     }
+
+    .avatar {
+      width: 90px;
+      height: auto;
+      border-radius: 100px;
+      margin-right: 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px;
+    }
   </style>
 </head>
 
 <body>
-  <h1>Hello.</h1>
-  <h2>I am yeizi.</h2>
+  <div class="header">
+    <img alt="Yeizi Avatar" class="avatar" src="assets/apple-touch-icon.png">
+    <div>
+      <h1>Hello,</h1>
+      <h2>I am yeizi.</h2>
+    </div>
+  </div>
   <p>
-    I'm an IT tech service, engineering student and transitioning to backend developer currently based in Argentina.
+    Basically a tech wizard in training.
+  </p>
+  <p>
+    I’m an engineering student based in Argentina. A technology and software development enthusiast, or at least that’s
+    what I tell myself to justify the sleepless nights.
+  </p>
+  <p>
+    By day, I’m an IT "Professional" specializing in Linux systems, where I wrangle networks, infrastructure, and I automate tasks with Python and Bash scripting. I’m responsible for network admin and monitoring and I develop server monitoring solutions that, shockingly, don’t involve me yelling at servers (most of the time), all while keeping meticulous technical docs up-to-date because, you know, someone has to.
+  </p>
+  <p>
+    In my spare time, I moonlight as a programming guru or, let’s be real, a caffeine-fueled dreamer. I’m a “half
+    full-stack” developer, meaning I team up with a friend who handles the front end because, let’s face it, UI isn’t my
+    strong suit.
   </p>
   <p>
     You can follow me on
-    <a href="https://x.com/iamyeizi" target="_blank">X / Twitter</a>
-    where I mostly post memes and dev related things. Where there may soon be some of my stuff, <a
-      href="https://github.com/iamyeizi" target="_blank">GitHub</a>.
+    <a href="https://x.com/iamyeizi" target="_blank">X/Twitter</a>
+    where I mostly spam memes and dev-related rants because, apparently, that’s my calling. I’ll soon be dumping some of
+    my craps on <a href="https://github.com/iamyeizi" target="_blank">GitHub</a>.
   </p>
   <p>
-    Apart from the whole tech world, I like reading about science and cybersecurity, taking and editing photos of
-    places, of course anime, techno music, coffee, F1 and tennis.
+    Outside of the tech grind, I nerd out over science and cybersecurity, snap and edit photos of places (<a
+      href="https://www.instagram.com/under1ens">here</a>), and obsess over anime, techno music, coffee
+    (my true love) and calisthenics.
   </p>
 </body>
-
 </html>
