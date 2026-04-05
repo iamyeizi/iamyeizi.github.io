@@ -1,136 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>iamyeizi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" href="/assets/favicon-48x48.png" sizes="48x48" />
-  <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
-  <link rel="shortcut icon" href="/assets/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="iamyeizi" />
-  <link rel="manifest" href="/assets/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-
-  <style>
-    html {
-      background-color: black;
-    }
-
-    body {
-      font-family: "Space Mono", monospace;
-      font-size: calc(9px + 0.33vw);
-      font-weight: 400;
-      font-style: normal;
-      -webkit-font-smoothing: antialiased;
-      padding: 5vh 10vw;
-      color: #979797;
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 3.9em;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    h2 {
-      font-size: 2.2em;
-      font-weight: 700;
-      letter-spacing: -1.5px;
-      margin: 0;
-    }
-
-    p {
-      font-size: 1.3em;
-      font-weight: 300;
-      line-height: 1.4;
-      max-width: 45em;
-    }
-
-    a {
-      text-decoration: none;
-      white-space: nowrap;
-      color: #979797;
-      position: relative;
-      transition: color 200ms cubic-bezier(0, 0.8, 0.13, 1);
-    }
-
-    a:after {
-      color: #ffffff;
-      content: '';
-      position: absolute;
-      z-index: -1;
-      top: 66%;
-      left: -0.1em;
-      right: -0.1em;
-      bottom: 0;
-      transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-      background-color: rgba(121, 34, 227, 0.5);
-    }
-
-    a:hover {
-      color: #ffffff;
-    }
-
-    a:hover:after {
-      top: 0%;
-    }
-
-    .avatar {
-      width: 90px;
-      height: auto;
-      border-radius: 100px;
-      margin-right: 20px;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 10px;
-    }
-  </style>
+  <meta name="description" content="iamyeizi" />
+  <meta name="theme-color" content="#050816" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/icons/favicon-48x48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/icons/site.webmanifest" />
 </head>
+<body data-lang="en">
+  <div class="grid-overlay"></div>
 
-<body>
-  <div class="header">
-    <img alt="Yeizi Avatar" class="avatar" src="assets/apple-touch-icon.png">
-    <div>
-      <h1>Hello,</h1>
-      <h2>I am yeizi.</h2>
+  <div class="app-container">
+
+    <div class="sys-controls">
+      <button id="lang-toggle" class="control-btn">[LANG: EN]</button>
     </div>
+
+    <header class="app-header reveal">
+      <div class="header-info">
+        <h1 class="logo" data-en="Hi &#92;" data-es="Hola &#92;">Hi &#92;</h1>
+        <h2 data-en="I am yeizi" data-es="Soy yeizi">I am yeizi</h2>
+        <p class="layout-note">[SYS.MODE: PIPELINE]</p>
+      </div>
+    </header>
+
+    <section class="app-hero reveal delay-1">
+      <p class="lede">
+        <mark data-en="Systems analyst and student." data-es="Analista de sistemas y estudiante.">Systems analyst and student.</mark>
+        <span data-en="Building resilient tools to reduce friction and orchestrating systems that simplify complex daily workflows." data-es="Armando herramientas de fierro para reducir fricción y orquestando sistemas que simplifican el día a día.">Building resilient tools to reduce friction and orchestrating systems that simplify complex daily workflows.</span>
+      </p>
+      <div class="hero-data">
+        <span class="data-badge">TZ=America/Argentina/Buenos_Aires</span>
+      </div>
+    </section>
+
+    <aside class="app-sidebar reveal delay-2">
+      <div class="avatar-module">
+        <div class="avatar-frame">
+          <img src="/assets/avatar.webp" alt="Portrait of yeizi" width="180" height="180" onerror="this.style.display='none'" />
+          <div class="scanline"></div>
+        </div>
+        <span class="avatar-caption" data-en="&gt; SYS_ADMIN [ACTIVE]" data-es="&gt; SYS_ADMIN [ACTIVO]">&gt; SYS_ADMIN [ACTIVE]</span>
+      </div>
+
+      <div class="stats-module">
+        <div class="stat-block">
+          <h3>[CORE_LANG]</h3>
+          <p>Bash, Python, TypeScript</p>
+        </div>
+        <div class="stat-block">
+          <h3 data-en="[LINKS]" data-es="[LINKS]">[LINKS]</h3>
+          <a href="https://x.com/iamyeizi">&gt; X</a><br>
+          <a href="https://github.com/iamyeizi">&gt; GITHUB</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-content reveal delay-3">
+      <article class="content-node">
+        <div class="node-header">
+          <span class="node-id">0x01</span>
+          <h3 data-en="EXECUTION_LOOP" data-es="CICLO_DE_EJECUCION">EXECUTION_LOOP</h3>
+        </div>
+        <p data-en="Student and systems analyst at a healthcare emergency services company. My weekly cycle centers on developing systems to automate internal workflows, structuring raw data, monitoring infrastructure, and deploying tools that operate reliably in high-pressure environments." data-es="Estudiante y analista de sistemas en una empresa de emergencias médicas. Mi semana se basa en armar automatizaciones para los procesos internos, estructurar datos crudos, monitorear la infraestructura y mandar a producción herramientas que se la banquen en entornos de muchísima presión.">
+          Student and systems analyst at a healthcare emergency services company. My weekly cycle centers on developing systems to automate internal workflows, structuring raw data, monitoring infrastructure, and deploying tools that operate reliably in high-pressure environments.
+        </p>
+      </article>
+
+      <article class="content-node">
+        <div class="node-header">
+          <span class="node-id">0x02</span>
+          <h3 data-en="SECONDARY_VECTORS" data-es="VECTORES_SECUNDARIOS">SECONDARY_VECTORS</h3>
+        </div>
+        <p data-en="Science, hacking, cooking, photography, techno music, and gym. In my free time, I maintain, design, and develop software architectures for small business clients." data-es="Ciencia, hacking, cocina, fotografía, techno y gimnasio. En el tiempo libre mantengo, diseño y armo arquitecturas de software para negocios chicos.">
+          Science, hacking, cooking, photography, techno music, and gym. In my free time, I maintain, design, and develop software architectures for small business clients.
+        </p>
+      </article>
+    </main>
+
+    <footer class="app-footer reveal delay-3">
+      <div class="foot-line"></div>
+      <div class="foot-text">
+        <span data-en="[EOF] DATA STREAM TERMINATED." data-es="[EOF] FLUJO DE DATOS TERMINADO.">[EOF] DATA STREAM TERMINATED.</span>
+        <span>iamyeizi_2026</span>
+      </div>
+    </footer>
+
   </div>
-  <p>
-    Basically a tech wizard in training.
-  </p>
-  <p>
-    I’m an engineering student based in Argentina. A technology and software development enthusiast, or at least that’s
-    what I tell myself to justify the sleepless nights.
-  </p>
-  <p>
-    By day, I’m a system analyst at a private healthcare emergency company with nationwide operations, where my
-    responsibilities range from IT technical and infrastructure support to developing software that enhances internal
-    processes. I create automation tools and even lead software projects from the ground up.
-  </p>
-  <p>
-    In my spare time, I moonlight as a programming guru or, let’s be real, a caffeine-fueled dreamer. I’m a “half
-    full-stack” developer, meaning I team up with a friend who handles the front end because, let’s face it, UI isn’t my
-    strong suit. Together, we're starting to build custom software for small businesses.
-  </p>
-  <p>
-    You can follow me on
-    <a href="https://x.com/iamyeizi" target="_blank">X/Twitter</a>
-    where I mostly spam memes and dev-related rants because, apparently, that’s my calling. I’ll soon be dumping some of
-    my craps on <a href="https://github.com/iamyeizi" target="_blank">GitHub</a>.
-  </p>
-  <p>
-    Outside of the tech grind, I nerd out over science and cybersecurity, snap and edit photos of places, and obsess over
-    anime, techno music, coffee and calisthenics.
-  </p>
+  <script src="/assets/site.js"></script>
 </body>
 </html>

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* DARK TRACE PIPELINE VARIABLES */
+  --bg: #050508;
+  --text: #e0e4e8;
+  --muted: #8b949e;
+  --accent: #a855f7;
+  --highlight-rgba: rgba(121, 34, 227, 0.5); /* Deep purple from user */
+  --highlight-solid: rgb(121, 34, 227);
+  --line-faint: rgba(121, 34, 227, 0.15);
+  --line-strong: rgba(121, 34, 227, 0.4);
+
+  --font-main: 'Space Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND GRID */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(var(--line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-faint) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: var(--highlight-rgba);
+  color: #fff;
+}
+
+h1, h2, h3 { font-weight: 700; text-transform: uppercase; }
+a { color: var(--accent); text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid var(--highlight-rgba); transition: all 0.2s; }
+a:hover { background-color: var(--highlight-rgba); color: #fff; border-color: var(--accent); }
+mark { background-color: var(--highlight-rgba); color: #fff; padding: 0 4px; border: 1px solid var(--accent); }
+
+/* PIPELINE CONTAINER */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 40px 40px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+/* The Main Vertical Trace Line */
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 15px var(--highlight-rgba);
+}
+
+/* SHARED PIPELINE NODES */
+.app-header, .app-hero, .app-sidebar, .content-node, .app-footer {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Trace Dots for each node */
+.app-header::before, .app-hero::before, .app-sidebar::before, .content-node::before, .app-footer::before {
+  content: '';
+  position: absolute;
+  left: -46px; /* Offset to align with the vertical line */
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 10px var(--highlight-rgba);
+}
+
+/* Node Internal Styling */
+.logo { font-size: 2rem; color: var(--text); letter-spacing: -0.05em; margin-bottom: 5px; }
+.layout-note { font-size: 0.8rem; color: var(--accent); border-left: 0px solid var(--accent); }
+
+.app-hero h2 { font-size: 2rem; margin-bottom: 15px; text-shadow: 0 0 10px var(--highlight-rgba); }
+.lede { font-size: 1rem; color: var(--muted); margin-bottom: 20px; }
+.data-badge { display: inline-block; border: 1px solid var(--line-strong); padding: 5px 10px; font-size: 0.75rem; margin-right: 10px; margin-bottom: 10px; color: var(--accent); background: rgba(0,0,0,0.5); }
+
+.avatar-module, .stats-module {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 40px;
+}
+
+.avatar-frame { width: 140px; height: 140px; border: 2px solid var(--accent); position: relative; overflow: hidden; background: #000; margin-bottom: 10px; }
+.avatar-frame img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; filter: grayscale(1) sepia(1) hue-rotate(220deg) brightness(1.5) contrast(1.2); }
+.scanline { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, var(--highlight-rgba), transparent); animation: scan 3s linear infinite; height: 10px; }
+@keyframes scan { 0% { transform: translateY(-20px); } 100% { transform: translateY(160px); } }
+.avatar-caption { font-size: 0.7rem; color: var(--muted); }
+
+.stat-block { margin-top: 20px; font-size: 0.85rem; border-left: 1px solid var(--line-strong); padding-left: 15px; }
+.stat-block h3 { font-size: 0.75rem; color: var(--accent); margin-bottom: 5px; }
+
+/* Content Cards */
+.content-node {
+  background: rgba(5,5,8,0.7);
+  border: 1px solid var(--line-strong);
+  padding: 25px;
+  backdrop-filter: blur(5px);
+}
+.node-header { display: flex; align-items: center; border-bottom: 1px dashed var(--line-strong); padding-bottom: 10px; margin-bottom: 15px; }
+.node-id { background: var(--highlight-solid); color: #fff; padding: 2px 6px; font-size: 0.7rem; margin-right: 10px; }
+.content-node h3 { font-size: 1.1rem; color: var(--text); }
+.content-node p { font-size: 0.95rem; }
+
+.foot-line { height: 1px; background: linear-gradient(90deg, var(--accent), transparent); margin-bottom: 20px; }
+.foot-text { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--muted); }
+
+/* MOBILE FALLBACK */
+@media (max-width: 900px) {
+  .app-container { padding-left: 40px; }
+  .app-container::before { left: 10px; }
+  .app-header::before, .app-hero::before, .app-sidebar::before, .content-node::before, .app-footer::before { left: -36px; }
+}
+
+/* FX */
+.reveal { opacity: 0; animation: fadeIn 0.8s forwards; }
+.delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+/* SYS CONTROLS */
+.sys-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 100;
+}
+.control-btn {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+  cursor: pointer;
+  padding: 3px 8px; /* Hacemos el botón más pequeño (menos padding) */
+  font-family: inherit;
+  font-size: 0.65rem; /* Ajustamos la fuente para que sea más sutil */
+  transition: all 0.2s;
+}
+.control-btn:hover {
+  background: var(--highlight-rgba);
+  color: var(--text);
+  border-color: var(--accent);
+}
+@media (max-width: 900px) {
+  .sys-controls {
+    position: absolute; /* Lo sacamos del flujo para que no afecte el padding */
+    top: 15px;
+    right: 15px; /* A la derecha absoluta en mobile */
+    margin-bottom: 0;
+    justify-content: flex-end;
+  }
+}
