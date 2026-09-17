@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milo — política de privacidad</title>
+  <meta name="description" content="Política de privacidad de Milo, secretaria personal privada por Telegram." />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <style>
+    html { background-color: black; }
+    body {
+      font-family: "Space Mono", ui-monospace, monospace;
+      font-size: calc(9px + 0.33vw);
+      padding: 5vh 10vw;
+      color: #979797;
+      margin: 0;
+    }
+    h1 { font-size: 2.6em; margin: 0 0 0.5em; color: #e0e0e0; }
+    h2 { font-size: 1.6em; margin: 1.5em 0 0.3em; color: #e0e0e0; }
+    p, li { font-size: 1.25em; line-height: 1.5; max-width: 48em; }
+    a { color: #e0e0e0; }
+    footer { margin-top: 4em; font-size: 1em; }
+  </style>
+</head>
+
+<body>
+  <h1>Política de privacidad — Milo</h1>
+  <p>Última actualización: 17 de septiembre de 2026.</p>
+  <p>Milo es una secretaria personal privada de un único usuario que funciona por Telegram.
+    Esta política explica qué datos se usan y con qué fin.</p>
+
+  <h2>Qué datos se usan</h2>
+  <ul>
+    <li>Mensajes de Telegram (texto, audio, imágenes y PDF) para interpretar pedidos de agenda.</li>
+    <li>Eventos de Google Calendar (lectura y escritura) para consultar, crear, mover y eliminar eventos.</li>
+    <li>Preferencias de configuración, resúmenes breves de conversación y recordatorios.</li>
+  </ul>
+
+  <h2>Con quién se comparten</h2>
+  <ul>
+    <li>Telegram procesa los mensajes del bot según sus propios términos.</li>
+    <li>Google procesa el texto y los medios enviados a Gemini y los eventos de Calendar,
+      según los términos de Google API Services y el plan en uso.</li>
+    <li>No se venden datos ni se comparten con terceros con fines publicitarios.</li>
+  </ul>
+
+  <h2>Dónde se guardan</h2>
+  <p>En un servidor privado del titular: base SQLite con credenciales OAuth cifradas,
+    resúmenes y avisos cifrados, y copias de respaldo con retención de 14 días.
+    La llave de cifrado se custodia separada de las copias. Los audios e imágenes
+    temporales se eliminan tras procesarlos; no se conservan archivos multimedia.</p>
+
+  <h2>Tus derechos</h2>
+  <p>Podés pedir la eliminación de preferencias y contexto con el comando
+    /borrar_memoria, revocar el acceso de Google en
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>
+    y escribir a <a href="mailto:juancruzariatiservio@gmail.com">juancruzariatiservio@gmail.com</a>
+    por cualquier consulta.</p>
+
+  <footer><a href="/milo/">Milo</a> · <a href="/milo/terminos.html">Términos</a> · <a href="/">iamyeizi.dev</a></footer>
+</body>
+
+</html>
